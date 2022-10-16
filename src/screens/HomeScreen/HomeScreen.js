@@ -2,22 +2,18 @@ import React, { useState, useEffect } from "react";
 
 import { getRaking } from "../../services/requests.js";
 
+import TopBar from "../../components/TopBar/TopBar.js";
+
 import {
   Container,
   ContainerLoading,
-  ContainerLogo,
   ContainerRanking,
-  ImageLogo,
   ImageRanking,
   TextRaking,
-  TextTittle,
-  Tittle,
   TittleRanking,
-  TopBar,
   ViewRanking,
 } from "./styles";
 
-import logo from "../../assets/images/twemoji_shorts.png";
 import imgRanking from "../../assets/images/Vector.png";
 
 import { Oval } from "react-loader-spinner";
@@ -35,6 +31,7 @@ export default function HomeScreen() {
       setLoading(false);
     } catch (error) {
       console.log(error);
+      alert("Erro ao buscar ranking");
       setLoading(false);
     }
   }
@@ -45,14 +42,7 @@ export default function HomeScreen() {
 
   return (
     <Container>
-      <TopBar>
-        <TextTittle>Entrar</TextTittle>
-        <TextTittle>Cadastrar-se</TextTittle>
-      </TopBar>
-      <ContainerLogo>
-        <Tittle>Shortly</Tittle>
-        <ImageLogo src={logo} />
-      </ContainerLogo>
+      <TopBar />
       <ContainerRanking>
         <ImageRanking src={imgRanking} />
         <TittleRanking>Ranking</TittleRanking>
