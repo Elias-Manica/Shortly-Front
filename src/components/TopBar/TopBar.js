@@ -16,7 +16,13 @@ export default function TopBar() {
   return (
     <Container>
       <TopBarContainer>
-        <TextTittle>Entrar</TextTittle>
+        <TextTittle
+          onClick={() => {
+            navigate("/login");
+          }}
+        >
+          Entrar
+        </TextTittle>
         <TextTittle
           onClick={() => {
             navigate("/cadastro");
@@ -25,13 +31,20 @@ export default function TopBar() {
           Cadastrar-se
         </TextTittle>
       </TopBarContainer>
-      <ContainerLogo
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        <Tittle>Shortly</Tittle>
-        <ImageLogo src={logo} />
+      <ContainerLogo>
+        <Tittle
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          Shortly
+        </Tittle>
+        <ImageLogo
+          src={logo}
+          onClick={() => {
+            navigate("/");
+          }}
+        />
       </ContainerLogo>
     </Container>
   );
