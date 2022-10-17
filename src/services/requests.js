@@ -17,4 +17,14 @@ async function singIn(body) {
   return promise;
 }
 
-export { getRaking, singUp, singIn };
+async function getProfile(token) {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const promise = await axios.get(`${Base_URL}/users/me`, config);
+  return promise;
+}
+
+export { getRaking, singUp, singIn, getProfile };

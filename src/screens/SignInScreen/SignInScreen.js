@@ -34,7 +34,7 @@ export default function SignInScreen() {
         JSON.stringify({ token: `${response.data.token}` })
       );
       setToken(response.data.token);
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       if (error.response.data.length > 0) {
         Swal.fire(`${error.response.data}`, "erro!", "error");
