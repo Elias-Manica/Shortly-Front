@@ -52,6 +52,7 @@ export const ContainerShortUrl = styled.div`
   border-radius: 12px 12px 12px 12px;
 
   margin-top: 50px;
+  margin-bottom: 50px;
   display: flex;
   align-items: center;
 `;
@@ -87,4 +88,37 @@ export const ContainerTrash = styled.div`
   color: #ea4f4f;
   font-size: 20px;
   cursor: pointer;
+`;
+
+export const TextEmpty = styled.h4`
+  font-family: "Lexend Deca";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+export const ContainerLoading = styled.div`
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const LinkExternal = styled.a`
+  font-family: "Lexend Deca";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+
+  /* identical to box height */
+  text-decoration: ${(props) => props.underline};
+  cursor: ${(props) => props.pointer};
+  color: #ffffff;
+  margin-top: 7px;
+  margin-bottom: 7px;
 `;

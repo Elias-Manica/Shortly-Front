@@ -18,6 +18,8 @@ import imgRanking from "../../assets/images/Vector.png";
 
 import { Oval } from "react-loader-spinner";
 
+import Swal from "sweetalert2";
+
 export default function HomeScreen() {
   const [listRanking, setListRanking] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -26,12 +28,18 @@ export default function HomeScreen() {
     setLoading(true);
     try {
       let response = await getRaking();
-      console.log(response.data);
+
       setListRanking(response.data);
       setLoading(false);
     } catch (error) {
-      console.log(error);
-      alert("Erro ao buscar ranking");
+      if (error.response.data.length > 0) {
+        Swal.fire(`${error.response.data}`, "erro!", "error");
+        setLoading(false);
+
+        return;
+      }
+      Swal.fire(`${error.response.data.msg}`, "erro!", "error");
+      setLoading(false);
       setLoading(false);
     }
   }

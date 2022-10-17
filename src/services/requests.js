@@ -27,4 +27,43 @@ async function getProfile(token) {
   return promise;
 }
 
-export { getRaking, singUp, singIn, getProfile };
+async function createShortly(body, token) {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const promise = await axios.post(`${Base_URL}/urls/shorten`, body, config);
+  return promise;
+}
+
+async function deleteShortly(id, token) {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const promise = await axios.delete(`${Base_URL}/urls/${id}`, config);
+  return promise;
+}
+
+async function openShortly(shortly) {
+  const promise = await axios.get(`${Base_URL}/urls/open/${shortly}`);
+  return promise;
+}
+
+async function getSHortlyById(id) {
+  const promise = await axios.get(`${Base_URL}/urls/${id}`);
+  return promise;
+}
+
+export {
+  getRaking,
+  singUp,
+  singIn,
+  getProfile,
+  createShortly,
+  deleteShortly,
+  openShortly,
+  getSHortlyById,
+};
