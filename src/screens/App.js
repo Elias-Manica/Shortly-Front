@@ -10,6 +10,7 @@ import HomeScreen from "./HomeScreen/HomeScreen";
 import SignUpScreen from "./SignUpScreen/SignUpScreen";
 import SignInScreen from "./SignInScreen/SignInScreen";
 import CreateShortlyScreen from "./CreateShortlyScreen/CreateShortlyScreen";
+import RankingScreen from "./RankingScreen/RankingScreen";
 
 export default function App() {
   const [token, setToken] = useState("");
@@ -24,6 +25,7 @@ export default function App() {
             <Route path="/cadastro" element={<SignUpScreen />} />
             <Route path="/login" element={<SignInScreen />} />
             <Route path="/home" element={<CreateShortlyScreen />} />
+            <Route path="/ranking" element={<RankingScreen />} />
           </Routes>
         </BrowserRouter>
       </TokenAuth.Provider>

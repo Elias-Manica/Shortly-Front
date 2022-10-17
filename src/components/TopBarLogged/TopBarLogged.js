@@ -45,7 +45,13 @@ export default function TopBarLogged() {
           >
             Home
           </TextTittle>
-          <TextTittle>Ranking</TextTittle>
+          <TextTittle
+            onClick={() => {
+              navigate("/ranking");
+            }}
+          >
+            Ranking
+          </TextTittle>
           <TextTittle>Sair</TextTittle>
         </ContainerButtons>
       </TopBarContainer>

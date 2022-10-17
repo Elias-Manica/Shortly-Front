@@ -15,6 +15,7 @@ import {
   ButtonUrl,
   Container,
   ContainerBody,
+  ContainerEmpty,
   ContainerInfos,
   ContainerInput,
   ContainerLoading,
@@ -245,7 +246,9 @@ export default function CreateShortlyScreen() {
             </ContainerShortUrl>
           ))
         ) : (
-          <TextEmpty>Você não tem shortly ainda</TextEmpty>
+          <ContainerEmpty>
+            <TextEmpty>Você não tem nenhum shortly ainda!</TextEmpty>
+          </ContainerEmpty>
         )}
       </ContainerBody>
     </Container>

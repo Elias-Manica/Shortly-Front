@@ -90,6 +90,13 @@ export const ContainerTrash = styled.div`
   cursor: pointer;
 `;
 
+export const ContainerEmpty = styled.div`
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+`;
+
 export const TextEmpty = styled.h4`
   font-family: "Lexend Deca";
   font-style: normal;
@@ -99,6 +106,7 @@ export const TextEmpty = styled.h4`
   color: black;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 30px;
 `;
 
 export const ContainerLoading = styled.div`
