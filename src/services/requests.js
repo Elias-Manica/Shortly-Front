@@ -57,10 +57,21 @@ async function getSHortlyById(id) {
   return promise;
 }
 
+async function signOut(token) {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const promise = await axios.post(`${Base_URL}/signOut`, {}, config);
+  return promise;
+}
+
 export {
   getRaking,
   singUp,
   singIn,
+  signOut,
   getProfile,
   createShortly,
   deleteShortly,
